@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad911264-d58b-4f64-bf5d-36b8cda90d15" name="Changes" comment="Add BubbleSort, RandomArray, Input, Print">
-      <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
-    </list>
+    <list default="true" id="ad911264-d58b-4f64-bf5d-36b8cda90d15" name="Changes" comment="Add SelectionSort and InsertionSort" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +80,7 @@
       <updated>1725813637382</updated>
       <workItem from="1725813638328" duration="4000" />
       <workItem from="1725850549553" duration="1080000" />
-      <workItem from="1725852250385" duration="86000" />
+      <workItem from="1725852250385" duration="201000" />
     </task>
     <task id="LOCAL-00001" summary="Add BubbleSort, RandomArray, Input, Print">
       <option name="closed" value="true" />
@@ -92,7 +90,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725851581413</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add SelectionSort and InsertionSort">
+      <option name="closed" value="true" />
+      <created>1725852383571</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1725852383571</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,7 +106,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add BubbleSort, RandomArray, Input, Print" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add BubbleSort, RandomArray, Input, Print" />
+    <MESSAGE value="Add SelectionSort and InsertionSort" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add SelectionSort and InsertionSort" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
