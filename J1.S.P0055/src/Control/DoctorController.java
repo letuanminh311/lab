@@ -41,17 +41,17 @@ public class DoctorController {
                 return;
             }
 
-            String newName = inputData.inputString("Enter new Doctor Name (press Enter to keep current): ", Constant.REGDOCTORNAME);
+            String newName = inputData.inputString("Enter new Doctor Name: ", Constant.REGDOCTORNAME);
             if (!newName.trim().isEmpty()) {
                 existingDoctor.setName(newName);
             }
 
-            String newSpecialization = inputData.inputString("Enter new Specialization (press Enter to keep current): ", Constant.REGSPECIALIZATION);
+            String newSpecialization = inputData.inputString("Enter new Specialization: ", Constant.REGSPECIALIZATION);
             if (!newSpecialization.trim().isEmpty()) {
                 existingDoctor.setSpecialization(newSpecialization);
             }
 
-            String newAvailabilityStr = inputData.inputString("Enter new Availability (press Enter to keep current): ", Constant.REGAVAILABILITY);
+            String newAvailabilityStr = inputData.inputString("Enter new Availability: ", Constant.REGAVAILABILITY);
             if (!newAvailabilityStr.trim().isEmpty()) {
                 int newAvailability = Integer.parseInt(newAvailabilityStr);
                 existingDoctor.setAvailability(newAvailability);
@@ -66,7 +66,7 @@ public class DoctorController {
     }
 
     public void searchDoctor() {
-        String input = inputData.inputString("Enter search text (or press Enter to show all): ", ".*");
+        String input = inputData.inputString("Enter search text: ", ".*");
         try {
             HashMap<String, Doctor> results;
             if (input.trim().isEmpty()) {

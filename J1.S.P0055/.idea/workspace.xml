@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="151f6820-091a-4aac-85a9-9755dc4f7c76" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Common/Constant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Control/DoctorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Control/DoctorHash.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Doctor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ViewModel/InputData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ViewModel/ViewDoctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="151f6820-091a-4aac-85a9-9755dc4f7c76" name="Changes" comment="add all function" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +32,9 @@
     &quot;accountId&quot;: &quot;9f998b61-767a-4c01-89aa-6fb4b0a9355f&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -85,11 +79,24 @@
       <option name="presentableId" value="Default" />
       <updated>1725813447457</updated>
       <workItem from="1725813448410" duration="172000" />
-      <workItem from="1725855162939" duration="667000" />
+      <workItem from="1725855162939" duration="1344000" />
     </task>
+    <task id="LOCAL-00001" summary="add all function">
+      <option name="closed" value="true" />
+      <created>1725855908085</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725855908085</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add all function" />
+    <option name="LAST_COMMIT_MESSAGE" value="add all function" />
   </component>
 </project>
