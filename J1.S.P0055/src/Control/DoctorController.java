@@ -1,115 +1,97 @@
 package Control;
 
-import Common.Constant;
 import Model.Doctor;
 import ViewModel.InputData;
 import ViewModel.ViewDoctor;
 
-import java.util.HashMap;
-
 public class DoctorController {
-    private DoctorHash doctorHash;
-    private ViewDoctor view;
-    private InputData inputData;
+    DoctorManager doctorManager = new DoctorManager();
+    ViewDoctor viewDoctor = new ViewDoctor();
+    InputData inp = new InputData();
 
-    public DoctorController(DoctorHash doctorHash, ViewDoctor view, InputData inputData) {
-        this.doctorHash = doctorHash;
-        this.view = view;
-        this.inputData = inputData;
-    }
-
+    // Add a new doctor
     public void addDoctor() {
-        String doctorId = inputData.inputString("Enter Doctor ID (format: DOC 01): ", Constant.REGDOCTORID);
+        viewDoctor.displayMessage("———Add Doctor———");
+        String code = inp.inputString("Enter Code: ", Common.Constant.REGCODE);
+        String name = inp.inputString("Enter Name: ", Common.Constant.REGNAME);
+        String specialization = inp.inputString("Enter Specialization: ", Common.Constant.REGSPECIALIZATION);
+        int availability = inp.inputInteger("Enter Availability: ", Common.Constant.REGAVAILABILITY);
 
         try {
-            // Kiểm tra xem ID đã tồn tại chưa
-            Doctor existingDoctor = doctorHash.findDoctorById(doctorId);
-            if (existingDoctor != null) {
-                view.displayMessage("Error: Doctor ID already exists. Please enter a unique ID.");
-                return; // Dừng thực hiện nếu ID đã tồn tại
-            }
-
-            String name = inputData.inputString("Doctor Name: ", Constant.REGDOCTORNAME);
-            String specialization = inputData.inputString("Specialization: ", Constant.REGSPECIALIZATION);
-            int availability = inputData.inputInteger("Availability: ", Constant.REGAVAILABILITY);
-
-            Doctor doctor = new Doctor(doctorId, name, specialization, availability);
-            doctorHash.addDoctor(doctor);
-            view.displayMessage("Doctor added successfully.");
-        } catch (Exception ex) {
-            view.displayMessage(ex.getMessage());
+            doctorManager.addDoctor(new Doctor(code, name, specialization, availability));
+            viewDoctor.displayMessage("Doctor added successfully.");
+        } catch (Exception e) {
+            viewDoctor.displayMessage(e.getMessage());
         }
     }
 
-
+    // Update a doctor
     public void updateDoctor() {
-        String doctorId = inputData.inputString("Enter Doctor ID to update: ", Constant.REGDOCTORID);
+        viewDoctor.displayMessage("———Update Doctor———");
         try {
-            Doctor existingDoctor = doctorHash.findDoctorById(doctorId);
-            if (existingDoctor == null) {
-                view.displayMessage("Doctor ID not found.");
+            String code = inp.inputString("Enter Code: ", Common.Constant.REGCODE);
+
+            // Kiểm tra nếu mã bác sĩ không tồn tại thì báo lỗi ngay lập tức
+            if (doctorManager.findByCode(code) == null) {
+                viewDoctor.displayMessage("Doctor code doesn't exist.");
                 return;
             }
 
-            String newName = inputData.inputString("Enter new Doctor Name: ", Constant.REGDOCTORNAME);
-            if (!newName.trim().isEmpty()) {
-                existingDoctor.setName(newName);
-            }
+            String name = inp.inputString("Enter Name (leave blank to skip): ", ".*");
+            String specialization = inp.inputString("Enter Specialization (leave blank to skip): ", ".*");
 
-            String newSpecialization = inputData.inputString("Enter new Specialization: ", Constant.REGSPECIALIZATION);
-            if (!newSpecialization.trim().isEmpty()) {
-                existingDoctor.setSpecialization(newSpecialization);
-            }
+            // Nhập availability dưới dạng chuỗi, và kiểm tra hợp lệ qua regex
+            String availabilityStr = inp.inputString("Enter Availability (leave blank to skip): ", ".*");
 
-            String newAvailabilityStr = inputData.inputString("Enter new Availability: ", Constant.REGAVAILABILITY);
-            if (!newAvailabilityStr.trim().isEmpty()) {
-                int newAvailability = Integer.parseInt(newAvailabilityStr);
-                existingDoctor.setAvailability(newAvailability);
-            }
-
-            doctorHash.updateDoctor(existingDoctor);
-            view.displayMessage("Doctor updated successfully.");
-
-        } catch (Exception ex) {
-            view.displayMessage(ex.getMessage());
+            doctorManager.updateDoctor(code, name, specialization, availabilityStr);
+            viewDoctor.displayMessage("Doctor updated successfully.");
+        } catch (Exception e) {
+            viewDoctor.displayMessage(e.getMessage());
         }
     }
 
-    public void searchDoctor() {
-        String input = inputData.inputString("Enter search text: ", ".*");
-        try {
-            HashMap<String, Doctor> results;
-            if (input.trim().isEmpty()) {
-                results = doctorHash.getAllDoctors();
-            } else {
-                results = doctorHash.searchDoctor(input);
-            }
 
-            if (results.isEmpty()) {
-                view.displayMessage("No doctor found.");
-            } else {
-                for (Doctor doctor : results.values()) {
-                    view.displayMessage(doctor.toString());
-                }
-            }
-        } catch (Exception ex) {
-            view.displayMessage(ex.getMessage());
-        }
-    }
-
+    // Delete a doctor
     public void deleteDoctor() {
-        String doctorId = inputData.inputString("Enter Doctor ID to delete: ", Constant.REGDOCTORID);
+        viewDoctor.displayMessage("———Delete Doctor———");
         try {
-            Doctor doctor = doctorHash.findDoctorById(doctorId);
-            if (doctor == null) {
-                view.displayMessage("Doctor ID not found.");
-                return;
-            }
+            String code = inp.inputString("Enter Code: ", Common.Constant.REGCODE);
+            doctorManager.deleteDoctor(code);
+            viewDoctor.displayMessage("Doctor deleted successfully.");
+        } catch (Exception e) {
+            viewDoctor.displayMessage(e.getMessage());
+        }
+    }
 
-            doctorHash.deleteDoctor(doctor);
-            view.displayMessage("Doctor deleted successfully.");
-        } catch (Exception ex) {
-            view.displayMessage(ex.getMessage());
+    // Search for doctors
+    // Search for doctors
+    public void searchDoctor() {
+        viewDoctor.displayMessage("———Search Doctor———");
+        String searchStr = inp.inputString("Enter search text (leave empty to display all): ", ".*");
+
+        // Nếu người dùng không nhập gì thì hiển thị toàn bộ danh sách bác sĩ
+        if (searchStr.isEmpty()) {
+            viewDoctor.displayMessage("--------- Result ------------");
+            viewDoctor.displayDoctorListHeader();
+            for (Doctor doctor : doctorManager.getDoctorList()) {
+                System.out.println(doctor);
+            }
+        } else {
+            viewDoctor.displayMessage("--------- Result ------------");
+            viewDoctor.displayDoctorListHeader();
+            // Tìm kiếm bác sĩ theo chuỗi đã nhập
+            for (Doctor doctor : doctorManager.searchDoctor(searchStr)) {
+                System.out.println(doctor);
+            }
+        }
+    }
+
+    // Display all doctors
+    public void displayAllDoctors() {
+        viewDoctor.displayDoctorListHeader();
+        for (Doctor doctor : doctorManager.getDoctorList()) {
+            System.out.println(doctor);
         }
     }
 }
+

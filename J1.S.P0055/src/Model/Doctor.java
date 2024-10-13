@@ -9,7 +9,7 @@ public class Doctor {
     private int availability;
 
     public Doctor(String doctorId, String name, String specialization, int availability) {
-        if(name.matches(Constant.REGDOCTORNAME) && doctorId.matches(Constant.REGDOCTORID) && specialization.matches(Constant.REGSPECIALIZATION) && availability >= 0) {
+        if(name.matches(Constant.REGNAME) && doctorId.matches(Constant.REGCODE) && specialization.matches(Constant.REGSPECIALIZATION) && availability >= 0) {
             this.doctorId = doctorId;
             this.name = name;
             this.specialization = specialization;
@@ -22,7 +22,7 @@ public class Doctor {
     }
 
     public void setDoctorId(String doctorId) throws Exception {
-        if(doctorId.matches(Constant.REGDOCTORID)) {
+        if(doctorId.matches(Constant.REGCODE)) {
             this.doctorId = doctorId;
         }
         else {
@@ -35,7 +35,7 @@ public class Doctor {
     }
 
     public void setName(String name) throws Exception {
-        if(name.matches(Constant.REGDOCTORNAME)) {
+        if(name.matches(Constant.REGNAME)) {
             this.name = name;
         }
         else {
