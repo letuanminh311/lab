@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="151f6820-091a-4aac-85a9-9755dc4f7c76" name="Changes" comment="add all function" />
+    <list default="true" id="151f6820-091a-4aac-85a9-9755dc4f7c76" name="Changes" comment="fix some code in controller">
+      <change afterPath="$PROJECT_DIR$/../J1.L.P0023/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../J1.L.P0023/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../J1.L.P0023/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../J1.L.P0023/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../J1.L.P0023/J1.L.P0023.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/DoctorController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,22 +54,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Admin/OneDrive/Documents/LabProject/J1.S.P0055",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/Admin/OneDrive/Documents/LabProject/J1.S.P0055/src/Main.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/OneDrive/Documents/LabProject/J1.L.P0023&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Admin/OneDrive/Documents/LabProject/J1.S.P0055/src/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -80,6 +89,8 @@
       <updated>1725813447457</updated>
       <workItem from="1725813448410" duration="172000" />
       <workItem from="1725855162939" duration="1344000" />
+      <workItem from="1726043578825" duration="3034000" />
+      <workItem from="1728438373745" duration="988000" />
     </task>
     <task id="LOCAL-00001" summary="add all function">
       <option name="closed" value="true" />
@@ -89,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725855908085</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix some code in controller">
+      <option name="closed" value="true" />
+      <created>1726043756768</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1726043756768</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,6 +116,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add all function" />
-    <option name="LAST_COMMIT_MESSAGE" value="add all function" />
+    <MESSAGE value="fix some code in controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix some code in controller" />
   </component>
 </project>

@@ -20,10 +20,19 @@ public class DoctorController {
 
     public void addDoctor() {
         String doctorId = inputData.inputString("Enter Doctor ID (format: DOC 01): ", Constant.REGDOCTORID);
-        String name = inputData.inputString("Doctor Name: ", Constant.REGDOCTORNAME);
-        String specialization = inputData.inputString("Specialization: ", Constant.REGSPECIALIZATION);
-        int availability = inputData.inputInteger("Availability: ", Constant.REGAVAILABILITY);
+
         try {
+            // Kiểm tra xem ID đã tồn tại chưa
+            Doctor existingDoctor = doctorHash.findDoctorById(doctorId);
+            if (existingDoctor != null) {
+                view.displayMessage("Error: Doctor ID already exists. Please enter a unique ID.");
+                return; // Dừng thực hiện nếu ID đã tồn tại
+            }
+
+            String name = inputData.inputString("Doctor Name: ", Constant.REGDOCTORNAME);
+            String specialization = inputData.inputString("Specialization: ", Constant.REGSPECIALIZATION);
+            int availability = inputData.inputInteger("Availability: ", Constant.REGAVAILABILITY);
+
             Doctor doctor = new Doctor(doctorId, name, specialization, availability);
             doctorHash.addDoctor(doctor);
             view.displayMessage("Doctor added successfully.");
@@ -31,6 +40,7 @@ public class DoctorController {
             view.displayMessage(ex.getMessage());
         }
     }
+
 
     public void updateDoctor() {
         String doctorId = inputData.inputString("Enter Doctor ID to update: ", Constant.REGDOCTORID);
