@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="151f6820-091a-4aac-85a9-9755dc4f7c76" name="Changes" comment="fix some code in controller">
-      <change afterPath="$PROJECT_DIR$/src/Control/DoctorManager.java" afterDir="false" />
+    <list default="true" id="151f6820-091a-4aac-85a9-9755dc4f7c76" name="Changes" comment="Full project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/DoctorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/DoctorHash.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Doctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewModel/InputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewModel/InputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewModel/ViewDoctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewModel/ViewDoctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/DoctorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/DoctorManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +86,8 @@
       <workItem from="1725855162939" duration="1344000" />
       <workItem from="1726043578825" duration="3034000" />
       <workItem from="1728438373745" duration="988000" />
-      <workItem from="1728827825964" duration="656000" />
+      <workItem from="1728827825964" duration="1774000" />
+      <workItem from="1729485982365" duration="200000" />
     </task>
     <task id="LOCAL-00001" summary="add all function">
       <option name="closed" value="true" />
@@ -111,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726043756768</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Full project">
+      <option name="closed" value="true" />
+      <created>1728828616222</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1728828616223</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +122,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add all function" />
     <MESSAGE value="fix some code in controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix some code in controller" />
+    <MESSAGE value="Full project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Full project" />
   </component>
 </project>

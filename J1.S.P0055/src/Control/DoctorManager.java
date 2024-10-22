@@ -51,12 +51,8 @@ public class DoctorManager {
         // Nếu availability không trống, kiểm tra với regex
         if (!availabilityStr.isBlank()) {
             // Sử dụng regex để kiểm tra xem có phải là số nguyên dương hay không
-            if (availabilityStr.matches(Constant.REGAVAILABILITY)) {
                 int availability = Integer.parseInt(availabilityStr);
                 doctor.setAvailability(availability);
-            } else {
-                throw new Exception("Invalid input for Availability. It must be a positive number.");
-            }
         }
         // Nếu để trống thì không thay đổi availability (giữ nguyên giá trị cũ)
     }
