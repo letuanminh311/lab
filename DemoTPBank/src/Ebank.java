@@ -19,7 +19,7 @@ public class Ebank {
             return bundle.getString("password_length_error");
         }
         if (!Pattern.matches("^(?=.*[a-zA-Z])(?=.*\\d).+$", password)) {
-            return bundle.getString("password_format_error");
+            return bundle.getString("password_length_error");
         }
         return null;  // null nếu mật khẩu hợp lệ
     }

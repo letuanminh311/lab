@@ -8,10 +8,14 @@ public class Main {
     // Set the locale for language switching
     public static void setLocate(String language, String country) {
         Locale locale = new Locale(language, country);
-        bundle = ResourceBundle.getBundle("Language", locale);
+        if (locale.getLanguage().equals("vi")) {
+            bundle = ResourceBundle.getBundle("Vi", locale);
+        } else if (locale.getLanguage().equals("en")) {
+            bundle = ResourceBundle.getBundle("En", locale);
+        }
     }
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int choice;
 
@@ -28,7 +32,7 @@ public class Main {
                     setLocate("vi", "VN");  // Chuyển ngôn ngữ sang tiếng Việt
                     break;
                 case 2:
-                    setLocate("en", "US");  // Chuyển ngôn ngữ sang tiếng Anh
+                    setLocate("en", "EN");  // Chuyển ngôn ngữ sang tiếng Anh
                     break;
                 case 3:
                     System.exit(0);         // Thoát chương trình
