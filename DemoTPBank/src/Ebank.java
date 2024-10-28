@@ -26,7 +26,7 @@ public class Ebank {
 
     // Tạo mã captcha ngẫu nhiên
     public static String generateCaptcha() {
-        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         StringBuilder captcha = new StringBuilder();
         Random rnd = new Random();
         while (captcha.length() < 5) {
