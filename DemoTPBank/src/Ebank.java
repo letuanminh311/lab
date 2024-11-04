@@ -35,7 +35,7 @@ public class Ebank {
 
     // Kiểm tra mã captcha
     public static String checkCaptcha(String captchaInput, String captchaGenerated, ResourceBundle bundle) {
-        if (!captchaInput.trim().toLowerCase().contains(captchaGenerated.toLowerCase())) {
+        if (!captchaInput.trim().contains(captchaGenerated)) {
             return bundle.getString("captcha_error");
         }
         return null;  // null nếu captcha hợp lệ
