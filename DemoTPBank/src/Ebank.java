@@ -7,7 +7,7 @@ public class Ebank {
 
     // Kiểm tra số tài khoản (Account number)
     public static String checkAccountNumber(String accountNumber, ResourceBundle bundle) {
-        if (!Pattern.matches("\\d{10}", accountNumber)) {
+        if (!Pattern.matches(Constant.ACCOUNT_NUMBER_REGEX, accountNumber)) {
             return bundle.getString("account_error");
         }
         return null;  // null nếu số tài khoản hợp lệ
@@ -15,18 +15,15 @@ public class Ebank {
 
     // Kiểm tra mật khẩu (Password)
     public static String checkPassword(String password, ResourceBundle bundle) {
-        if (password.length() < 8 || password.length() > 31) {
-            return bundle.getString("password_length_error");
-        }
-        if (!Pattern.matches("^(?=.*[a-zA-Z])(?=.*\\d).+$", password)) {
-            return bundle.getString("password_length_error");
+        if (!Pattern.matches(Constant.PASSWORD_REGEX, password)) {
+            return bundle.getString("password_error"); // hoặc password_format_error tùy theo quy tắc mà bạn muốn
         }
         return null;  // null nếu mật khẩu hợp lệ
     }
 
     // Tạo mã captcha ngẫu nhiên
     public static String generateCaptcha() {
-        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
         StringBuilder captcha = new StringBuilder();
         Random rnd = new Random();
         while (captcha.length() < 5) {
@@ -38,11 +35,12 @@ public class Ebank {
 
     // Kiểm tra mã captcha
     public static String checkCaptcha(String captchaInput, String captchaGenerated, ResourceBundle bundle) {
-        if (!captchaInput.equalsIgnoreCase(captchaGenerated)) {
+        if (!captchaInput.trim().toLowerCase().contains(captchaGenerated.toLowerCase())) {
             return bundle.getString("captcha_error");
         }
         return null;  // null nếu captcha hợp lệ
     }
+
 
     // Thực hiện chức năng đăng nhập
     public static void login(ResourceBundle bundle, Scanner sc) {
